@@ -1,18 +1,7 @@
 defmodule GraphqlApi do
-  @moduledoc """
-  Documentation for `GraphqlApi`.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> GraphqlApi.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def request(url, query, header_list) do
+    response = HTTPoison.post!(url, query, header_list)
+    Jason.decode!(response.body)
   end
 end
