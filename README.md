@@ -36,7 +36,7 @@ iex> GraphqlApi.getUrlByTag("repo_owner","repo_name","tag")
     "name" => "repo_name_1.0.1_download_file"
   }
 ]
-
+```
 
 ## Additional file
 
