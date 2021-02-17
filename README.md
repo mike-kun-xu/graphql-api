@@ -1,6 +1,6 @@
 # GraphqlApi
 
-**TODO: Add description**
+**TODO: Add more functionalities**
 
 ## Installation
 
@@ -15,7 +15,29 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/graphql_api](https://hexdocs.pm/graphql_api).
+## Usage
 
+```elixir
+iex> GraphqlApi.getAllTags("repo_owner","repo_name")
+[
+  %{
+    "tag" => %{"name" => "repo_name_1.0.2"},
+    "url" => "https://repo.url/releases/tag/repo_name_1.0.2"
+  },
+  %{
+    "tag" => %{"name" => "repo_name_1.0.1"},
+    "url" => "https://repo.url/releases/tag/repo_name_1.0.1"
+  }
+]
+iex> GraphqlApi.getUrlByTag("repo_owner","repo_name","tag")
+[
+  %{
+    "downloadUrl" => "https://download.url/releases/download/repo_name_1.0.1/download_file",
+    "name" => "repo_name_1.0.1_download_file"
+  }
+]
+
+
+## Additional file
+
+A headerInfo.json is needed in directory header in order to have authentication.
